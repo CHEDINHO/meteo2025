@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/128/1163/1163661.png"
+    />
+</head>
+<body>
+
+    <div class="container">
+        <h1>Weather App</h1>
+        <form id="weatherForm">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button type="submit">Get Weather</button>
+        </form>
+        <div id="weatherInfo" class="weather-info">
+            <h2>Weather in <span id="location">-</span></h2>
+            <div class="weather-data">
+                <p>Temperature: <span id="temperature">-</span> °C</p>
+                <p>Description: <span id="description">-</span></p>
+                <img id="weatherIcon" src="" alt="Weather Icon" style="width: 50px; height: 50px;">
+            </div>
+        </div>
+       
+        </div>
+
+    </div>
+
+    <script src="sv.js"></script>
+</body>
+</html>

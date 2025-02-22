@@ -1,0 +1,251 @@
+/* إعدادات الخطوط الأساسية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0288d1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: gradientBackground 30s ease infinite;
+}
+
+/* الرسوم المتحركة للخلفية */
+@keyframes gradientBackground {
+    0% {
+        background: linear-gradient(135deg, #00bcd4, #0288d1);
+    }
+    50% {
+        background: linear-gradient(135deg, #00bcd4, #4caf50);
+    }
+    100% {
+        background: linear-gradient(135deg, #0288d1, #00bcd4);
+    }
+}
+
+/* الحاوية الرئيسية */
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: slideInUp 1s ease-out;
+}
+
+/* تأثير دخول الحاوية */
+@keyframes slideInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* عنوان التطبيق */
+h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* النموذج الخاص بإدخال المدينة */
+form {
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    padding: 15px;
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid #00bcd4;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 1.1rem;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #0288d1;
+}
+
+button {
+    padding: 15px 25px;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0288d1;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* عرض معلومات الطقس */
+.weather-info {
+    display: none;
+    opacity: 0;
+    margin-top: 30px;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* تأثير إظهار البيانات */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* عرض الأيقونات */
+.weather-icon {
+    font-size: 100px;
+    animation: iconSpin 3s linear infinite;
+}
+
+/* تأثير دوار للأيقونات */
+@keyframes iconSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* تفاصيل الطقس */
+.weather-details {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* تحسين الأنماط لتأثيرات الطقس الحية */
+.sunny {
+    background-color: #ffeb3b;
+    color: #ff9800;
+    animation: sunnyAnimation 5s ease-in-out infinite;
+}
+
+@keyframes sunnyAnimation {
+    0% {
+        background-color: #ffeb3b;
+        box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.8);
+    }
+    50% {
+        background-color: #ff9800;
+        box-shadow: 0px 0px 30px rgba(255, 152, 0, 0.8);
+    }
+    100% {
+        background-color: #ffeb3b;
+        box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.8);
+    }
+}
+
+/* تحسين التفاصيل مثل الرياح والمطر */
+.wind-speed {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.rainy {
+    background-color: #00bcd4;
+    animation: rainAnimation 5s ease-in-out infinite;
+}
+
+@keyframes rainAnimation {
+    0% {
+        background-color: #00bcd4;
+        box-shadow: 0px 0px 15px rgba(0, 188, 212, 0.8);
+    }
+    50% {
+        background-color: #0288d1;
+        box-shadow: 0px 0px 40px rgba(0, 72, 128, 0.8);
+    }
+    100% {
+        background-color: #00bcd4;
+        box-shadow: 0px 0px 15px rgba(0, 188, 212, 0.8);
+    }
+}
+
+/* تحسين الشكل على شاشات صغيرة */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .weather-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .weather-data {
+        font-size: 1.1rem;
+    }
+
+    input[type="text"] {
+        width: 60%;
+    }
+
+    button {
+        padding: 12px 20px;
+    }
+
+    .weather-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* تحسين عرض البيانات في حالة الطقس */
+.weather-info {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
